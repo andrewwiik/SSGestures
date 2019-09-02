@@ -1,9 +1,10 @@
 Package: com.atwiiks.ssgestures
 Name: SSGestures
-Depends: mobilesubstrate
-Version: 1.0.0
+Depends: firmware (>= 11.0), mobilesubstrate
+Conflicts: com.ps.ssgesturesios12fix
+Version: 1.0.1
 Architecture: iphoneos-arm
-Description: Extra Geasture for the Screenshot stack in iOS 11
+Description: Extra Gesture for the Screenshot stack in iOS 11+
 Maintainer: ATWiiks
 Author: ATWiiks
 Section: Tweaks

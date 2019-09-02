@@ -1,4 +1,4 @@
-export ADDITIONAL_CFLAGS += -I$(THEOS_PROJECT_DIR)/headers -fobjc-arc
+export ADDITIONAL_CFLAGS += -I$(THEOS_PROJECT_DIR)/headers
 
 ifeq ($(SIMULATOR),1)
 	export TARGET = simulator:latest:11.0
@@ -6,7 +6,7 @@ else
 	export TARGET = iphone:latest:11.0
 endif
 
-ARCHS = arm64
+ARCHS = arm64 arm64e
 
 include $(THEOS)/makefiles/common.mk
 
@@ -17,5 +17,5 @@ SSGestures_FILES = $(wildcard *.m) $(wildcard *.xm)
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 after-install::
-	install.exec "killall -9 ScreenshotServicesService"
-	install.exec "killall -9 SpringBoard"
+	install.exec "killall -9 ScreenshotServicesService || true"
+	install.exec "killall -9 SpringBoard || true"
